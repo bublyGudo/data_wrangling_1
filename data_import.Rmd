@@ -8,7 +8,7 @@ editor_options:
 ---
 
 ```{r setup, echo=FALSE, message = FALSE}
-setwd("/Users/fangwang/Downloads/P8105 Data Science I/Lecture 5")
+setwd("/Users/fangwang/Downloads/P8105 Data Science I/Lecture 5/data_wrangling_1")
 library(tidyverse)
 library(readxl)
 library(haven)
@@ -18,7 +18,7 @@ This document will show how to import data.
 
 ## Import the dataset and clean the names:
 ```{r}
-litters_df = read_csv("data/FAS_litters.csv")
+litters_df = read_csv("./data/FAS_litters.csv")
 litters_df = janitor::clean_names(litters_df) # change variables' names
 ```
 
@@ -61,14 +61,13 @@ pull(litters_df, gd0_weight) # pull() is a new function
 
 ## What if we code "group" as a factor variable?
 ```{r}
-litters_df =
-  read_csv =(
-    file = ".data/FAS_litters.csv",,
-    na = c("NA", ".", ""),
-    col_types = cols(
-    Group = col_factor() #??change the variable to factor vector
-    )
+litters_df = read_csv(
+  file = "./data/FAS_litters.csv",
+  na = c("NA", ".", ""),
+  col_types = cols(
+    Group = col_factor()
   )
+)
 ```
 
 
@@ -89,5 +88,3 @@ pulse_df = read_sas("data/public_pulse_data.sas7bdat")
 litters_df = read.csv("data/FAS_litters.csv")
 litters_df$L # don't use "$" sign in the code??
 ```
-
-# solve git connection
